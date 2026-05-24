@@ -45,3 +45,15 @@ Notes & future work
 - Add idempotency (via Redis) for safer retries.
 - Add background worker or Vercel cron schedule.
 - Improve UI with shadcn components and React Query caching.
+
+Docker deployment
+1. Build the production image:
+   ```bash
+   docker build -t inventory-reservation .
+   ```
+2. Start the app and database together:
+   ```bash
+   docker compose -f docker-compose.prod.yml up -d
+   ```
+3. Visit `http://localhost:3000`.
+4. Customize `DATABASE_URL` in `docker-compose.prod.yml` or use environment variables for your host.
